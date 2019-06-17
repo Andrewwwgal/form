@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("../fonts/HelveticaNeueCyr-Medium.otf"); }
+
+@font-face {
+  font-family: "HelveticaNeueLight";
+  src: url("../fonts/HelveticaNeueCyr-Light.otf"); }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  background-image: url("../img/purple_sunset-wallpaper-2880x1800.png");
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-position: 50%; }
+  @supports (background-image: linear-gradient(#000000a6, #00000094)) {
+    html {
+      background-image: linear-gradient(#000000a6, #00000094), url("../img/purple_sunset-wallpaper-2880x1800.png"); } }
+  @media (max-width: 39.5em) {
+    html {
+      font-size: 58.5%;
+      background-image: linear-gradient(#000000a6, #00000094), url("../img/purple_sunset-wallpaper-600.png");
+      background-position: 47% -10%; } }
+  @media (max-width: 31.25em) {
+    html {
+      font-size: 55%; } }
+  @media (max-width: 25.7em) {
+    html {
+      font-size: 52%; } }
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 39.5em), (min-resolution: 192dpi) and (min-width: 39.5em) {
+    html {
+      background-image: linear-gradient(#0000002b, #0000003d), url("../img/purple_sunset-wallpaper-2880x1800@2x.png"); } }
+
+body {
+  font-family: HelveticaNeue;
+  color: #fff;
+  letter-spacing: .1rem;
+  box-sizing: border-box; }
+
+.form {
+  height: 43rem;
+  width: 62rem;
+  background-image: url("../img/blured.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: .5rem;
+  padding: 3rem; }
+  @media (max-width: 39.5em) {
+    .form {
+      width: 50rem; } }
+  @media (max-width: 31.25em) {
+    .form {
+      width: 45rem; } }
+  @media (max-width: 25.7em) {
+    .form {
+      width: 38rem; } }
+  @media (max-width: 20.7em) {
+    .form {
+      width: 100%;
+      border-radius: 0; } }
+  .form__back-btn {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: HelveticaNeueLight;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; }
+    .form__back-btn::before {
+      content: "";
+      display: inline-block;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-right: .7rem;
+      background-image: url("../img/left-arrow.png");
+      background-size: cover; }
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        .form__back-btn::before {
+          background-color: #fff;
+          -webkit-mask-image: url("../img/left-arrow.png");
+          mask-image: url("../img/left-arrow.png");
+          -webkit-mask-size: cover;
+          mask-size: cover;
+          background-image: none; } }
+  .form__img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (max-width: 25.7em) {
+      .form__img {
+        height: 9rem;
+        width: 9rem; } }
+  .form__input-wrapper {
+    position: relative;
+    width: 37rem;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (max-width: 31.25em) {
+      .form__input-wrapper {
+        width: 30rem; } }
+    @supports (width: -webkit-fit-content) or (width: -moz-fit-content) or (width: fit-content) {
+      .form__input-wrapper {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content; } }
+    .form__input-wrapper--invalid::after {
+      content: "!";
+      position: absolute;
+      color: #fff;
+      font-size: 3rem;
+      height: 80%;
+      width: 20px;
+      background-color: #b40000;
+      top: 50%;
+      left: 98%;
+      transform: translate(-100%, -50%);
+      width: 4.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .form__input-wrapper--valid::after {
+      content: "";
+      background-image: url("../img/checked.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      height: 2.2rem;
+      width: 2.2rem;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%); }
+  .form__input {
+    font-size: 1.8rem;
+    font-family: HelveticaNeueLight;
+    font-weight: 700;
+    display: block;
+    width: 37rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-radius: 10rem;
+    border: 1px solid #fff;
+    opacity: .4;
+    background-color: transparent;
+    transition: .2s ease-in-out;
+    letter-spacing: .1rem; }
+    @media (max-width: 31.25em) {
+      .form__input {
+        width: 30rem; } }
+    .form__input--phone {
+      margin-top: 2rem; }
+    .form__input--password {
+      margin-top: 1.5rem; }
+    .form__input--invalid, .form__input:invalid {
+      opacity: 1;
+      color: red !important; }
+    .form__input--valid, .form__input:valid {
+      color: #fff;
+      opacity: 1 !important; }
+    .form__input--invalid::-webkit-input-placeholder, .form__input:invalid::-webkit-input-placeholder {
+      color: red !important; }
+    .form__input::-webkit-input-placeholder {
+      color: #fff;
+      letter-spacing: .15rem;
+      transition: .2s ease-in-out; }
+    .form__input:focus {
+      background-color: #fff;
+      color: #999999;
+      opacity: 1; }
+    .form__input:focus::-webkit-input-placeholder {
+      color: #999999; }
+  .form__controlls {
+    display: flex;
+    margin-top: 1.8rem;
+    width: 35rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+    @supports (width: -webkit-fit-content) or (width: -moz-fit-content) or (width: fit-content) {
+      .form__controlls {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content; } }
+  .form__save-user {
+    display: flex;
+    align-items: center; }
+  .form__forgot-pass {
+    font-size: 1.6rem;
+    font-family: HelveticaNeueLight;
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    margin-left: 8.3rem; }
+    @media (max-width: 31.25em) {
+      .form__forgot-pass {
+        margin-left: 2.3rem; } }
+  .form__checkbox {
+    display: none; }
+  .form__checkbox:checked + .form__label span::before {
+    left: 90%;
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 1; }
+  .form__label {
+    font-size: 1.6rem;
+    font-family: HelveticaNeueLight;
+    display: flex;
+    align-items: center;
+    cursor: pointer; }
+    .form__label span {
+      height: 2.4rem;
+      width: 4.4rem;
+      border: 1px solid #fff;
+      border-radius: 25rem;
+      display: inline-block;
+      position: relative;
+      margin-right: .8rem; }
+      .form__label span::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        transition: .2s ease-in-out;
+        background-color: #fff;
+        opacity: .3;
+        width: 2.2rem;
+        height: 1.6rem;
+        border-radius: 2.5rem; }
+        @media (max-width: 25.7em) {
+          .form__label span::before {
+            height: 1.4rem;
+            width: 2rem; } }
+  .form__btn {
+    font-family: HelveticaNeueLight;
+    font-size: 1.2rem;
+    padding: 1.5rem 4.8rem;
+    border: 1px solid #fff;
+    background-color: #fff;
+    letter-spacing: .253rem;
+    border-radius: 2.5rem;
+    margin-top: 2.3rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .2s ease-in-out;
+    color: black;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    .form__btn:disabled {
+      opacity: 0.2;
+      color: #fff;
+      background-color: transparent; }
+    .form__btn:hover:not(:disabled) {
+      transform: translateX(-50%) translateY(-0.5rem);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+    .form__btn:active:not(:disabled) {
+      transform: translateX(-50%) translateY(0rem);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); }
